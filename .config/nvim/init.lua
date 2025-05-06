@@ -3,8 +3,9 @@ require("config.lazy")
 require("keymaps")
 require("config.lsp")
 require("mason").setup()
+-- require("lspsaga.symbol.winbar").get_bar()
 
-vim.cmd("colorscheme cyberdream")
+vim.cmd("colorscheme kanagawa")
 vim.lsp.enable({
 	-- 'ansible',
 	"bash",
@@ -14,5 +15,8 @@ vim.lsp.enable({
 	"lua",
 	"pyright",
 	"svelte",
+	"tailwindcss-language-server",
+	-- "typescript-language-server",
+	-- "tailwindcss",
 	-- 'yaml',
 })

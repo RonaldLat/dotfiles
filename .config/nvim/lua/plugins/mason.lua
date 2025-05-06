@@ -1,22 +1,23 @@
 -- plugins/mason.lua (or wherever you configure Mason)
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-  },
-  config = function()
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "lua_ls",         -- Lua language server
-        "pyright",        -- Python language server
-        -- "tsserver",       -- TypeScript language server
-        -- "rust_analyzer",  -- Rust language server
-        "gopls",          -- Go language server
-        "stylua",          -- Go language server
-        "marksman",          -- Go language server
-        -- Add any other LSP servers you want to auto-install here
-      },
-    })
-  end,
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+	},
+	config = function()
+		require("mason").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"lua_ls", -- Lua language server
+				"pyright", -- Python language server
+				-- "tsserver",       -- TypeScript language server
+				-- "rust_analyzer",  -- Rust language server
+				"gopls", -- Go language server
+				-- "stylua",          -- Go language server
+				-- TODO: ensure install stylua
+				"marksman", -- Go language server
+				-- Add any other LSP servers you want to auto-install here
+			},
+		})
+	end,
 }

@@ -1,1 +1,1 @@
-return{  "rebelot/heirline.nvim"}
+return { "rebelot/heirline.nvim" }

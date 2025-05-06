@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/ronald/.zsh/completions:"* ]]; then export FPATH="/home/ronald/.zsh/completions:$FPATH"; fi
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
@@ -32,7 +34,15 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export ZK_NOTEBOOK_DIR="$HOME/zettelkasten/"
+
+export EDITOR="nvim"
+# ohmyposh
+export PATH=$PATH:/home/ronald/bin
 
 #proxies
 #export http_proxy="http://192.168.12.194:44355"
 #export https_proxy="http://192.168.12.194:44355"
+# eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config ~/dotfiles/ohmyposh_themes/amro.omp.json)"
+. "/home/ronald/.deno/env"
