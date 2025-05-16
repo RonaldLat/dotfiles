@@ -34,4 +34,23 @@ require("lazy").setup({
 	install = { colorscheme = { "gruvbox-baby" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
+	change_detection = { notify = false },
+	ui = { border = "rounded" },
+	defaults = { lazy = true },
+	performance = {
+		cache = { enabled = true },
+		rtp = {
+			disabled_plugins = {
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+	debug = false,
 })

@@ -7,23 +7,27 @@ size = 11
 
 [font.bold]
 # family = "JetBrainsMono Nerd Font"
-# family = "RobotoMono Nerd Font"
-family = "JetBrainsMonoNL Nerd Font"
+family = "RobotoMono Nerd Font"
+# family = "FiraCode Nerd Font Mono"
+# family = "Source Code Pro"
+# family = "JetBrainsMonoNL Nerd Font"
 style = "Heavy"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
-# family = "RobotoMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+family = "RobotoMono Nerd Font"
+# family = "FiraCode Nerd Font Mono"
+# family = "Source Code Pro"
 #family = "JetBrainsMonoNL Nerd Font"
 style = "Medium Italic"
 
 [font.normal]
-# family = "RobotoMono Nerd Font"
-# family = "FiraCode Nerd Font"
+family = "RobotoMono Nerd Font"
+# family = "FiraCode Nerd Font Mono"
 # family = "Hack Nerd Font Mono"
 # family = "Noto Mono"
-#family = "JetBrainsMonoNL Nerd Font"
-family = "JetBrainsMono Nerd Font"
+# family = "Source Code Pro"
+# family = "JetBrainsMono Nerd Font"
 style = "Medium"
 
 [scrolling]

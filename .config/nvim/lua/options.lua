@@ -1,3 +1,4 @@
+-- vim.loader.enable() -- speed up nvim
 vim.g.autoformat = true
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 

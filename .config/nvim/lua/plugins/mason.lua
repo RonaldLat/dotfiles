@@ -1,6 +1,8 @@
 -- plugins/mason.lua (or wherever you configure Mason)
 return {
 	"williamboman/mason.nvim",
+	cmd = "Mason",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},
@@ -21,3 +23,10 @@ return {
 		})
 	end,
 }
+
+-- {
+--   'williamboman/mason-lspconfig.nvim',
+--   event = { "BufReadPre", "BufNewFile" },
+--   dependencies = {
+--     'williamboman/mason.nvim'
+--   }

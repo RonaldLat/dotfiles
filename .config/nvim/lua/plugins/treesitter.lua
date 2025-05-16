@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter-context",
+	event = { "BufReadPre", "BufNewFile" },
 	{
 		"windwp/nvim-ts-autotag",
 		opts = {
@@ -15,6 +16,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		lazy = false,
+		event = { "BufReadPre", "BufNewFile" },
 		-- event = { "BufReadPost", "BufNewFile" },
 		opts = function()
 			require("nvim-treesitter.configs").setup({

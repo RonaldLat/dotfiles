@@ -1,7 +1,8 @@
 ---@type LazySpec
 return {
 	"mikavilpas/yazi.nvim",
-	event = "VeryLazy",
+	cmd = "Yazi",
+	-- event = "VeryLazy",
 	dependencies = {
 		-- check the installation instructions at
 		-- https://github.com/folke/snacks.nvim
