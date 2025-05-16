@@ -1,3 +1,3 @@
 return {
-  { "folke/tokyonight.nvim", lazy = false }, -- Install the tokyonight colorscheme
+	{ "folke/tokyonight.nvim", event = { "VeryLazy" } }, -- Install the tokyonight colorscheme
 }

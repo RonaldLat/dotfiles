@@ -1,6 +1,7 @@
 return {
 	{
 		"navarasu/onedark.nvim",
+		event = { "VeryLazy" },
 		config = function()
 			require("onedark").setup({
 				style = "deep", -- Already present
@@ -13,7 +14,7 @@ return {
 				term_colors = true,
 				-- ... other settings ...
 			})
-			require("onedark").load()
+			-- require("onedark").load()
 		end,
 	},
 }

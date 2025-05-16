@@ -1,6 +1,8 @@
 return {
 	"renerocksai/telekasten.nvim",
 	dependencies = { "nvim-telescope/telescope.nvim" },
+	event = { "VeryLazy" },
+	lazy = true,
 	config = function()
 		require("telekasten").setup({
 			home = vim.fn.expand("~/zettelkasten"),

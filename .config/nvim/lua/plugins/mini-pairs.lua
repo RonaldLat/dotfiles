@@ -1,5 +1,5 @@
-  return {
-    "echasnovski/mini.pairs",
-    opts = {},
-  }
-
+return {
+	"echasnovski/mini.pairs",
+	event = { "VeryLazy" },
+	opts = {},
+}

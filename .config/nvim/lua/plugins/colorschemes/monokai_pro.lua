@@ -1,7 +1,8 @@
 return {
 	{
 		"loctvl842/monokai-pro.nvim",
-		lazy = false,
+		-- lazy = false,
+		-- event = { "VeryLazy" },
 		priority = 1000,
 		config = function()
 			require("monokai-pro").setup({
@@ -48,7 +49,6 @@ return {
 					},
 				},
 			})
-			vim.cmd([[colorscheme monokai-pro]])
 		end,
 	},
 }

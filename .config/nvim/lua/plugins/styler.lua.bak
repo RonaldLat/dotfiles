@@ -1,0 +1,13 @@
+return{
+  "folke/styler.nvim",
+  config = function()
+    require("styler").setup({
+      themes = {
+        markdown = { colorscheme = "gruvbox" },
+        help = { colorscheme = "catppuccin-mocha", background = "dark" },
+        lua = { colorscheme = "cyberdream", background = "dark" },
+        yaml = { colorscheme = "everforest", background = "dark" },
+      },
+    })
+  end,
+}

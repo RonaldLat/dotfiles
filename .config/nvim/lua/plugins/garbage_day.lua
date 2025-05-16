@@ -4,5 +4,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		-- your options here
+		aggressive_mode = true,
+		notifications = true,
 	},
 }
