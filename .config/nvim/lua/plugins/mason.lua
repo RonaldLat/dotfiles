@@ -12,6 +12,11 @@ return {
 			ensure_installed = {
 				"lua_ls", -- Lua language server
 				"pyright", -- Python language server
+				"taplo", -- toml formatter
+				"yamlfmt",
+				"yamllint",
+				"write-good",
+				"vale",
 				-- "tsserver",       -- TypeScript language server
 				-- "rust_analyzer",  -- Rust language server
 				"gopls", -- Go language server

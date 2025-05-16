@@ -18,8 +18,12 @@ return {
 				svelte = { "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd", "prettier", stop_after_first = true },
 				scss = { "prettierd", "prettier", stop_after_first = true },
-				toml = { "prettierd", "prettier", stop_after_first = true },
+				toml = { "taplo", "prettier", stop_after_first = true },
 				yaml = { "prettierd", "prettier", stop_after_first = true },
+				json = { "prettierd", "prettier", stop_after_first = true },
+				jsonc = { "prettierd", "prettier", stop_after_first = true },
+				["_"] = { "trim_whitespace", "trim_newlines" },
+				-- go = { "goimports" }, -- "gofumpt"
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()

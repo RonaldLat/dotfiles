@@ -161,6 +161,9 @@ map("n", "<leader>obll", "<Cmd>ObsidianQuickSwitch<CR>", {
 	desc = "",
 })
 
+vim.keymap.set("n", "<leader>wh", "<C-w>h", {})
+vim.keymap.set("n", "<leader>wl", "<C-w>l", {})
+
 -- neocodeium
 vim.keymap.set("i", "<A-.>", function()
 	require("neocodeium").accept()

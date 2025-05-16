@@ -704,10 +704,17 @@ modes.launcher = gears.table.join({
 		handler = xrandr.show,
 	},
 	{
-		description = "launch ranger",
-		pattern = { "f" },
+		description = "launch yazi",
+		pattern = { "y" },
 		handler = function()
-			awful.spawn(terminal .. " -e ranger")
+			awful.spawn(terminal .. " -e yazi")
+		end,
+	},
+	{
+		description = "launch nvim",
+		pattern = { "n" },
+		handler = function()
+			awful.spawn(terminal .. " -e nvim")
 		end,
 	},
 	{
@@ -744,16 +751,16 @@ modes.launcher = gears.table.join({
 			awful.spawn("physlock -s", false)
 		end,
 	},
-	{
-		description = "launch ncmpcpp",
-		pattern = { "n" },
-		handler = function()
-			local host = os.getenv("MPD_HOST") or "localhost"
-			local port = os.getenv("MPD_PORT") or 6600
-
-			awful.spawn.raise_or_spawn(terminal .. " -e ncmpcpp --host " .. host .. " --port " .. port)
-		end,
-	},
+	-- {
+	-- 	description = "launch ncmpcpp",
+	-- 	pattern = { "n" },
+	-- 	handler = function()
+	-- 		local host = os.getenv("MPD_HOST") or "localhost"
+	-- 		local port = os.getenv("MPD_PORT") or 6600
+	--
+	-- 		awful.spawn.raise_or_spawn(terminal .. " -e ncmpcpp --host " .. host .. " --port " .. port)
+	-- 	end,
+	-- },
 	{
 		description = "toggle mpd playback",
 		pattern = { "p" },
