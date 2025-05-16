@@ -1,6 +1,12 @@
-<script>
-  const day = 'Wednesday'
-   </script>
+## drag and drop ui with svelte 
 
-<div class="text bg-stone-400 bg-sla">hello world {day} 
-  </div>
+## drag and drop ui with svelte 
+
+<script>
+</script>
+ 
+## drag and drop ui with svelte 
+
+<div>
+
+</div>

@@ -2,10 +2,12 @@ require("options")
 require("config.lazy")
 require("keymaps")
 require("config.lsp")
-require("mason").setup()
+require("autocmds")
+-- require("mason").setup()
 -- require("lspsaga.symbol.winbar").get_bar()
 
 vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme monokai-pro")
 vim.lsp.enable({
 	-- 'ansible',
 	"bash",

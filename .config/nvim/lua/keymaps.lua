@@ -78,8 +78,8 @@ map("n", "<leader>bol", "<Cmd>BufferOrderByLanguage<CR>", opts)
 -- map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
 ---- NvimTree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- open/close
-map("n", "<leader>ec", ":NvimTreeCollapse<CR>", opts) -- open/close
+-- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- open/close
+-- map("n", "<leader>ec", ":NvimTreeCollapse<CR>", opts) -- open/close
 
 -- Monorepo navigation
 -- map("n", "<leader>p", "<Cmd>CdProject<CR>", opts)
@@ -155,3 +155,28 @@ map("n", "<leader>obl", "<Cmd>ObsidianLinks<CR>", {
 	silent = true,
 	desc = "Obsidian: all links within the current buffer",
 })
+map("n", "<leader>obll", "<Cmd>ObsidianQuickSwitch<CR>", {
+	noremap = true,
+	silent = true,
+	desc = "",
+})
+
+-- neocodeium
+vim.keymap.set("i", "<A-.>", function()
+	require("neocodeium").accept()
+end)
+vim.keymap.set("i", "<A-w>", function()
+	require("neocodeium").accept_word()
+end)
+vim.keymap.set("i", "<A-;>", function()
+	require("neocodeium").accept_line()
+end)
+vim.keymap.set("i", "<A-e>", function()
+	require("neocodeium").cycle_or_complete()
+end)
+vim.keymap.set("i", "<A-r>", function()
+	require("neocodeium").cycle_or_complete(-1)
+end)
+vim.keymap.set("i", "<A-c>", function()
+	require("neocodeium").clear()
+end)

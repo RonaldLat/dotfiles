@@ -179,7 +179,8 @@ import = [
     # "~/dotfiles/.config/alacritty/themes/catppuccin-mocha.toml.toml"
     # "~/dotfiles/.config/alacritty/themes/nightfox.toml"
     # "~/dotfiles/.config/alacritty/themes/Tokyonight_Night.toml"
-    "~/dotfiles/.config/alacritty/themes/One-Dark.toml"
+    # "~/dotfiles/.config/alacritty/themes/One-Dark.toml"
+    "~/dotfiles/.config/alacritty/themes/Gruvbox-Dark.toml"
 ]
 # [general]
 ## general
