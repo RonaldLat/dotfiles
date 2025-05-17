@@ -1,1 +1,2 @@
-    feh --bg-scale ~/dotfiles/wallpaper/wall.jpg
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/ronald/dotfiles/wallpaper/cute-town.png' 

@@ -40,6 +40,13 @@ hide_when_typing = true
 opacity = 0.90
 dynamic_padding = false
 blur = true
+
+[window.padding]
+x = 5
+y = 5
+
+[colors]
+draw_bold_text_with_bright_colors = true
 #
 [cursor]
 # vi_mode_style = "Beam"
@@ -178,13 +185,13 @@ git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"""
 
 [general]
 import = [
-  # "~/dotfiles/.config/alacritty/themes/catppuccin-macchiato.toml"
-  # "~/dotfiles/.config/alacritty/themes/catppuccin-frappe.toml"
-  # "~/dotfiles/.config/alacritty/themes/catppuccin-mocha.toml.toml"
+  # "~/dotfiles/.config/alacritty/themes/catppuccin-macchiato.toml",
+  "~/dotfiles/.config/alacritty/themes/catppuccin-frappe.toml",
+  # "~/dotfiles/.config/alacritty/themes/catppuccin-mocha.toml.toml",
   # "~/dotfiles/.config/alacritty/themes/nightfox.toml"
-  # "~/dotfiles/.config/alacritty/themes/Tokyonight_Night.toml"
+  # "~/dotfiles/.config/alacritty/themes/Tokyonight_Night.toml",
   # "~/dotfiles/.config/alacritty/themes/One-Dark.toml"
-  "~/dotfiles/.config/alacritty/themes/Gruvbox-Dark.toml",
+  # "~/dotfiles/.config/alacritty/themes/Gruvbox-Dark.toml",
 ]
 # [general]
 ## general

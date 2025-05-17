@@ -73,7 +73,7 @@ beautiful.init(gears.filesystem.get_dir("config") .. "/themes/gruvbox/theme.lua"
 
 -- This is used later as the default terminal, browser and editor to run.
 local terminal = os.getenv("TERMCMD") or "alacritty"
-local browser = os.getenv("BROWSER") or "brave"
+local browser = os.getenv("BROWSER") or "qutebrowser"
 local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor .. " "
 
