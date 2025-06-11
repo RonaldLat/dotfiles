@@ -12,16 +12,17 @@ local theme_path = awful.util.getdir("config") .. "/themes/gruvbox/"
 local theme = {}
 -- theme.font = "sans-serif 11"
 theme.font = "Ubuntu Nerd Font 11"
-theme.icon_theme = "gruvbox-dark-icons-gtk"
+-- theme.icon_theme = "gruvbox-dark-icons-gtk"
+theme.icon_theme = "Elightenment-X"
 
 -- crop to size where wallpaper repeats itself
 -- theme.wallpaper = usurface.crop(theme_path .. "pb.jpg", 384, 0, 1920, 1080)
 -- theme.wallpaper = (theme_path .. "pb.jpg")
 
-local wallpaper_path = "~/dotfiles/wallpaper/cute-town.png"
+local wallpaper_path = "~/Pictures/wallpaper/hill-house.png"
 awful.spawn.with_shell("feh --bg-fill " .. wallpaper_path .. "&") -- Or --bg-fill
-awful.spawn.once("picom ") -- Basic Picom
-awful.spawn.once("wal -i " .. wallpaper_path .. "&")
+-- awful.spawn.once("picom ") -- Basic Picom
+-- awful.spawn.once("wal -i " .. wallpaper_path .. "&")
 
 -- Dark Gruvbox Colors
 theme.lightred = "#fb4934"
@@ -65,9 +66,11 @@ theme.fg_urgent = theme.lightorange
 --  Borders
 theme.useless_gap = dpi(10)
 theme.gap_single_client = true
-theme.border_width = dpi(3)
+-- theme.border_width = dpi(3)
+theme.border_width = dpi(2)
 theme.border_normal = theme.bg2
-theme.border_focus = theme.bg4
+-- theme.border_focus = theme.bg4
+theme.border_focus = theme.lightgreen
 theme.border_marked = theme.lightpurple
 
 -- Titlebars
@@ -145,7 +148,8 @@ theme.titlebar_height = dpi(20)
 theme.systray_icon_spacing = theme.gap
 
 -- All Widgets
-theme.widget_markup = "<span weight='heavy' color=%q>%s</span>"
+-- theme.widget_markup = "<span weight='heavy' color=%q>%s</span>"
+theme.widget_markup = "<span weight='normal' color=%q>%s</span>"
 
 -- Playback Status Widget
 theme.playback_width = dpi(200)

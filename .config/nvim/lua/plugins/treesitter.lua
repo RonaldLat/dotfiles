@@ -20,6 +20,9 @@ return {
 		-- event = { "BufReadPre", "BufNewFile" },
 		event = { "BufReadPost" },
 		-- event = { "BufReadPost", "BufNewFile" },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		opts = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {

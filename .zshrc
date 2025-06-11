@@ -40,6 +40,9 @@ export EDITOR="nvim"
 # ohmyposh
 export PATH=$PATH:/home/ronald/bin
 
+# bitwarden-cli
+export BW_SESSION="Rn728lD9CzFcQunUYfTWGFO+2Kq6YpR6dN9JVQ9pV5aMVSHG3EUSlqCz1b0wO5wYPlec+off+7UPYMFsI1MI0g=="
+
 #proxies
 #export http_proxy="http://192.168.12.194:44355"
 #export https_proxy="http://192.168.12.194:44355"
@@ -58,3 +61,4 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+export PATH="/home/ronald/.local/bin:$PATH"

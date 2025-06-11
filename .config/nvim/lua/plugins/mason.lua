@@ -17,6 +17,8 @@ return {
 				"yamllint",
 				"write-good",
 				"vale",
+				"isort",
+				"black",
 				-- "tsserver",       -- TypeScript language server
 				-- "rust_analyzer",  -- Rust language server
 				"gopls", -- Go language server

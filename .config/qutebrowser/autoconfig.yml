@@ -6,8 +6,27 @@
 
 config_version: 2
 settings:
+  colors.completion.scrollbar.bg:
+    global: '#C0FFEE'
   colors.tabs.bar.bg:
     global: '#555555'
+  content.blocking.method:
+    global: both
   content.javascript.clipboard:
+    https://bitwarden.com: access-paste
     https://gemini.google.com: access-paste
     https://github.com: access-paste
+    https://keepassxc.org: access-paste
+    https://nuxt.com: access-paste
+    https://www.josean.com: access-paste
+    https://www.opencode.net: access-paste
+  content.javascript.enabled:
+    global: true
+  content.notifications.enabled:
+    https://www.youtube.com: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: true
+  fonts.default_size:
+    global: 10pt
+  scrolling.smooth:
+    global: true

@@ -70,6 +70,7 @@ end
 
 -- Themes define colors, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_dir("config") .. "/themes/gruvbox/theme.lua")
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "xresources/theme.lua")
 
 -- This is used later as the default terminal, browser and editor to run.
 local terminal = os.getenv("TERMCMD") or "alacritty"
@@ -119,7 +120,8 @@ local myawesomemenu = {
 	{
 		"Lock",
 		function()
-			awesome.spawn("physlock -s")
+			-- awesome.spawn("physlock -s")
+			awesome.spawn("lock ")
 		end,
 	},
 	{
@@ -244,7 +246,7 @@ end
 -- Clock
 -------------------------------------------------------------------------------
 -- Create a textclock widget and attach a calendar to it
-local mytextclock = wibox.widget.textclock(beautiful.widget_markup:format(beautiful.bg_normal, "%H:%M"), 60)
+local mytextclock = wibox.widget.textclock(beautiful.widget_markup:format(beautiful.bg_normal, "%H:%M"), 1)
 local month_calendar = awful.widget.calendar_popup.month({
 	long_weekdays = true,
 	margin = beautiful.gap,
@@ -414,7 +416,7 @@ awful.screen.connect_for_each_screen(function(s)
 	for index, tag in ipairs(tags) do
 		awful.tag.add(tag, {
 			layout = awful.layout.layouts[ultrawide and 1 or 2],
-			gap = highres and beautiful.useless_gap or 0,
+			gap = highres and beautiful.useless_gap or 5,
 			screen = s,
 			selected = index == 1,
 		})
@@ -456,7 +458,8 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Wibar
 	-------------------------------------------------------------------------------
 	-- Create the wibar
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = beautiful.wibar_height })
+	s.mywibox =
+		awful.wibar({ position = "top", screen = s, height = beautiful.wibar_height, bg = beautiful.bg_normal .. "55" })
 	--global titlebar title container
 	s.title_container = wibox.container.margin()
 	-- global titlebar buttons contianer
@@ -475,6 +478,7 @@ awful.screen.connect_for_each_screen(function(s)
 			s.title_container,
 			layout = wibox.layout.align.horizontal,
 		},
+
 		{ -- Right widgets
 			wibox.container.margin(modalawesome.sequence, beautiful.gap, beautiful.big_gap),
 
@@ -509,19 +513,19 @@ awful.screen.connect_for_each_screen(function(s)
 			}),
 
 			-- Battery Indicator
-			utils.widget.compose({
-				{
-					battery.text,
-					color = beautiful.fg_normal,
-					shape = utils.shape.parallelogram.right,
-				},
-				{
-					battery.image,
-					color = beautiful.bg_focus,
-					shape = utils.shape.parallelogram.right,
-					margin = beautiful.gap,
-				},
-			}),
+			-- utils.widget.compose({
+			-- 	{
+			-- 		battery.text,
+			-- 		color = beautiful.fg_normal,
+			-- 		shape = utils.shape.parallelogram.right,
+			-- 	},
+			-- 	{
+			-- 		battery.image,
+			-- 		color = beautiful.bg_focus,
+			-- 		shape = utils.shape.parallelogram.right,
+			-- 		margin = beautiful.gap,
+			-- 	},
+			-- }),
 
 			-- Clock / Layout / Global Titlebar Buttons
 			utils.widget.compose({
@@ -718,6 +722,14 @@ modes.launcher = gears.table.join({
 		end,
 	},
 	{
+		description = "launch zelli",
+		pattern = { "z" },
+		handler = function()
+			awful.spawn(terminal .. " -e zellij a main")
+		end,
+	},
+
+	{
 		description = "take screenshot",
 		pattern = { "c" },
 		handler = function()
@@ -748,7 +760,9 @@ modes.launcher = gears.table.join({
 		description = "lock screen",
 		pattern = { "l" },
 		handler = function()
-			awful.spawn("physlock -s", false)
+			-- awful.spawn("physlock -s", false)
+			-- awful.spawn.with_shell("/home/ronald/.local/bin/lock")
+			awful.spawn.with_shell("sleep 1s && xss-lock i3lock-fancy")
 		end,
 	},
 	-- {
@@ -838,11 +852,12 @@ modes.launcher = gears.table.join({
 		description = "show the menubar",
 		pattern = { "m" },
 		handler = function()
-			local sgeo = awful.screen.focused().geometry
-			menubar.show_categories = false
-			menubar.geometry.height = beautiful.wibar_height
-			menubar.geometry.y = sgeo.y + sgeo.height - menubar.geometry.height - 2 * beautiful.menubar_border_width
-			menubar.show()
+			-- local sgeo = awful.screen.focused().geometry
+			-- menubar.show_categories = true
+			-- menubar.geometry.height = beautiful.wibar_height
+			-- menubar.geometry.y = sgeo.y + sgeo.height - menubar.geometry.height - 2 * beautiful.menubar_border_width
+			-- menubar.show()
+			awful.spawn("rofi -show drun")
 		end,
 	},
 }, modes.launcher)
@@ -1187,3 +1202,7 @@ end)
 -- }}}
 
 -- vim: foldmethod=marker
+-- require("ui")
+
+-- Autostart xautolock for screen locking
+awful.spawn("~/.config/awesome/autostart.sh")
