@@ -20,7 +20,7 @@ map("n", ";", ":", opts)
 
 -- map("n", "<leader>s", ":source %<CR>", opts)
 -- Remove search highlight
--- map("n", "<leader>c", "<cmd>nohlsearch<CR>", opts)
+map("n", "<leader>c", "<cmd>nohlsearch<CR>", opts)
 -- Reload configuration without restart nvim
 -- map("n", "<leader>r", ":so %<CR>", opts)
 

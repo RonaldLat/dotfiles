@@ -7,19 +7,19 @@ require("autocmds")
 -- require("lspsaga.symbol.winbar").get_bar()
 
 -- vim.cmd("colorscheme pywal16")
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme everforest")
 -- vim.cmd("colorscheme monokai-pro")
-vim.lsp.enable({
-	-- 'ansible',
-	"bash",
-	"css",
-	"html",
-	-- 'json',
-	"lua",
-	"pyright",
-	"svelte",
-	"tailwindcss-language-server",
-	-- "typescript-language-server",
-	-- "tailwindcss",
-	-- 'yaml',
-})
+-- vim.lsp.enable({
+-- 	-- 'ansible',
+-- 	"bash",
+-- 	"css",
+-- 	"html",
+-- 	-- 'json',
+-- 	"lua",
+-- 	-- "pyright",
+-- 	"svelte",
+-- 	"tailwindcss-language-server",
+-- 	-- "typescript-language-server",
+-- 	-- "tailwindcss",
+-- 	-- 'yaml',
+-- })

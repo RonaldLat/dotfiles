@@ -1,0 +1,11 @@
+-- ~/.config/nvim/lua/plugins/heirline.lua
+return {
+	"rebelot/heirline.nvim",
+	config = function()
+		require("heirline").setup({
+			statusline = require("heirline_config.statusline"),
+			-- optionally:
+			-- tabline = require('heirline_config.tabline'),
+		})
+	end,
+}

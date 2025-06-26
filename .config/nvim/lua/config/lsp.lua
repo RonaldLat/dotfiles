@@ -8,6 +8,7 @@ lsp.enable({
 	"bashls",
 	"clangd",
 	"lua_ls",
+	"ruff",
 	-- "marksman",
 	-- "ts_ls",
 	-- "jsonls",

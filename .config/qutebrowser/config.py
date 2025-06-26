@@ -1,5 +1,3 @@
-import themes.catppuccin as catppuccin
-import themes.dracula as dracula
 # import themes.pywalQute.draw
 
 
