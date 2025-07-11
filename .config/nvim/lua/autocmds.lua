@@ -63,3 +63,29 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		vim.defer_fn(autosave_markdown, autosave_interval)
 	end,
 })
+
+-- Define an autocommand group to manage your autocmds.
+-- This is good practice to prevent autocmds from being duplicated
+-- if you source your config multiple times.
+local lat96_markdown_augroup = vim.api.nvim_create_augroup("Lat96Markdown", { clear = true })
+
+-- Create the autocommand
+vim.api.nvim_create_autocmd("BufReadPost", {
+	group = lat96_markdown_augroup,
+	pattern = "lat96/*.md",
+	callback = function()
+		-- !!! IMPORTANT: Replace 'YourMarkdownPreviewCommand' or 'YourMarkdownPreviewFunction()'
+		-- with the actual command or function provided by your markdown preview plugin.
+
+		-- Option 1: If your plugin provides a direct Vim command (e.g., :MarkdownPreview)
+		vim.cmd("silent! YourMarkdownPreviewCommand")
+
+		-- Option 2: If your plugin provides a Lua function to call (less common for direct preview commands)
+		-- If your plugin exposes a Lua function like `require('your_plugin').preview()`, you'd use:
+		-- pcall(require('your_plugin').preview)
+
+		-- Option 3: If your plugin provides a Vimscript function to call (e.g., :call MyPlugin#Preview())
+		-- vim.cmd("silent! call YourMarkdownPreviewFunction()")
+	end,
+	desc = "Automatically render markdown files in lat96 directory",
+})

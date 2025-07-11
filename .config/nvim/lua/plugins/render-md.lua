@@ -1,6 +1,6 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
-	cmd = { "RenderMarkdown" },
+	cmd = { "RenderMarkdown", "BufReadPre" },
 	-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
 	config = function()
