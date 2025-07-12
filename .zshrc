@@ -48,7 +48,6 @@ export BW_SESSION="Rn728lD9CzFcQunUYfTWGFO+2Kq6YpR6dN9JVQ9pV5aMVSHG3EUSlqCz1b0wO
 #export https_proxy="http://192.168.12.194:44355"
 # eval "$(oh-my-posh init zsh)"
 eval "$(oh-my-posh init zsh --config ~/dotfiles/ohmyposh_themes/amro.omp.json)"
-. "/home/ronald/.deno/env"
 
 # change working directory when exiting yazi
 # Then use y instead of yazi to start, and press q to quit, you'll see the CWD changed. Sometimes, you don't want to change, press Q to quit.
@@ -61,4 +60,11 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# pyenv
+# curl -fsSL https://pyenv.run | bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
+
 export PATH="/home/ronald/.local/bin:$PATH"
