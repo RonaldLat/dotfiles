@@ -18,13 +18,13 @@ return {
 				-- 	["<CR>"] = { "select_and_accept" },
 				-- },
 				-- menu = { border = "single" },
-				-- { list = { selection = "manual" } },
-				-- documentation = {
-				-- 	auto_show = true,
-				-- 	auto_show_delay_ms = 250,
-				-- 	treesitter_highlight = true,
-				-- 	window = { border = "rounded" },
-				-- },
+				list = { selection = { preselect = false, auto_insert = true } },
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 250,
+					treesitter_highlight = true,
+					window = { border = "rounded" },
+				},
 				menu = {
 					border = "single",
 					draw = {
