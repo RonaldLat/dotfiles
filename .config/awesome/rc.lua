@@ -74,7 +74,8 @@ beautiful.init(gears.filesystem.get_dir("config") .. "/themes/gruvbox/theme.lua"
 
 -- This is used later as the default terminal, browser and editor to run.
 local terminal = os.getenv("TERMCMD") or "alacritty"
-local browser = os.getenv("BROWSER") or "qutebrowser"
+-- local browser = os.getenv("BROWSER") or "qutebrowser"
+local browser = "qutebrowser" or os.getenv("BROWSER")
 local editor = os.getenv("EDITOR") or "nvim"
 local editor_cmd = terminal .. " -e " .. editor .. " "
 
@@ -513,19 +514,19 @@ awful.screen.connect_for_each_screen(function(s)
 			}),
 
 			-- Battery Indicator
-			-- utils.widget.compose({
-			-- 	{
-			-- 		battery.text,
-			-- 		color = beautiful.fg_normal,
-			-- 		shape = utils.shape.parallelogram.right,
-			-- 	},
-			-- 	{
-			-- 		battery.image,
-			-- 		color = beautiful.bg_focus,
-			-- 		shape = utils.shape.parallelogram.right,
-			-- 		margin = beautiful.gap,
-			-- 	},
-			-- }),
+			utils.widget.compose({
+				{
+					battery.text,
+					color = beautiful.fg_normal,
+					shape = utils.shape.parallelogram.right,
+				},
+				{
+					battery.image,
+					color = beautiful.bg_focus,
+					shape = utils.shape.parallelogram.right,
+					margin = beautiful.gap,
+				},
+			}),
 
 			-- Clock / Layout / Global Titlebar Buttons
 			utils.widget.compose({
@@ -595,14 +596,16 @@ local keybindings = {
 		{},
 		"XF86MonBrightnessDown",
 		function()
-			awful.spawn("xbacklight -dec 10", false)
+			-- awful.spawn("xbacklight -dec 10", false)
+			awful.spawn("brightnessctl set 10%-", false)
 		end,
 	},
 	{
 		{},
 		"XF86MonBrightnessUp",
 		function()
-			awful.spawn("xbacklight -inc 10", false)
+			-- awful.spawn("xbacklight -inc 10", false)
+			awful.spawn("brightnessctl set +10%", false)
 		end,
 	},
 	{ {}, "XF86Display", xrandr.show },
@@ -852,12 +855,12 @@ modes.launcher = gears.table.join({
 		description = "show the menubar",
 		pattern = { "m" },
 		handler = function()
-			-- local sgeo = awful.screen.focused().geometry
-			-- menubar.show_categories = true
-			-- menubar.geometry.height = beautiful.wibar_height
-			-- menubar.geometry.y = sgeo.y + sgeo.height - menubar.geometry.height - 2 * beautiful.menubar_border_width
-			-- menubar.show()
-			awful.spawn("rofi -show drun")
+			local sgeo = awful.screen.focused().geometry
+			menubar.show_categories = true
+			menubar.geometry.height = beautiful.wibar_height
+			menubar.geometry.y = sgeo.y + sgeo.height - menubar.geometry.height - 2 * beautiful.menubar_border_width
+			menubar.show()
+			-- awful.spawn("rofi -show drun")
 		end,
 	},
 }, modes.launcher)
@@ -1205,4 +1208,7 @@ end)
 -- require("ui")
 
 -- Autostart xautolock for screen locking
-awful.spawn("~/.config/awesome/autostart.sh")
+-- awful.spawn("~/.config/awesome/autostart.sh")
+-- awful.spawn.with_shell("feh &")
+awful.spawn("/home/ronaldo/dotfiles/.fehbg")
+awful.spawn.with_shell("picom &")
