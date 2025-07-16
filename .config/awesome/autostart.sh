@@ -12,6 +12,7 @@ run() {
 # Example: run "picom"
 
 # sh ~/dotfiles/.fehbg
-run "picom "
+run "feh &"
+run "picom &"
 
-run "xautolock -time 10 -locker  \"/home/ronald/.local/bin/lock\" &"
+# run "xautolock -time 10 -locker  \"/home/ronald/.local/bin/lock\" &"

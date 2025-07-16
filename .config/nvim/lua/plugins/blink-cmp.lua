@@ -19,36 +19,36 @@ return {
 				-- },
 				-- menu = { border = "single" },
 				list = { selection = { preselect = false, auto_insert = true } },
-				documentation = {
-					auto_show = true,
-					auto_show_delay_ms = 250,
-					treesitter_highlight = true,
-					window = { border = "rounded" },
-				},
+				-- documentation = {
+				-- 	auto_show = true,
+				-- 	auto_show_delay_ms = 250,
+				-- 	treesitter_highlight = true,
+				-- 	window = { border = "rounded" },
+				-- },
 				menu = {
 					border = "single",
-					draw = {
-						components = {
-							kind_icon = {
-								text = function(ctx)
-									local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
-									return kind_icon
-								end,
-								-- (optional) use highlights from mini.icons
-								highlight = function(ctx)
-									local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-									return hl
-								end,
-							},
-							kind = {
-								-- (optional) use highlights from mini.icons
-								highlight = function(ctx)
-									local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-									return hl
-								end,
-							},
-						},
-					},
+					-- draw = {
+					-- 	components = {
+					-- 		kind_icon = {
+					-- 			text = function(ctx)
+					-- 				local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+					-- 				return kind_icon
+					-- 			end,
+					-- 			-- (optional) use highlights from mini.icons
+					-- 			highlight = function(ctx)
+					-- 				local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+					-- 				return hl
+					-- 			end,
+					-- 		},
+					-- 		kind = {
+					-- 			-- (optional) use highlights from mini.icons
+					-- 			highlight = function(ctx)
+					-- 				local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+					-- 				return hl
+					-- 			end,
+					-- 		},
+					-- 	},
+					-- },
 				},
 			},
 			signature = { window = { border = "single" } },
@@ -58,24 +58,24 @@ return {
 				-- preset = "default",
 
 				-- this ones also work fine
-				-- ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-				-- ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+				["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 
 				["<CR>"] = { "accept", "fallback" },
-				["<Tab>"] = {
-					function(cmp)
-						return cmp.select_next()
-					end,
-					"snippet_forward",
-					"fallback",
-				},
-				["<S-Tab>"] = {
-					function(cmp)
-						return cmp.select_prev()
-					end,
-					"snippet_backward",
-					"fallback",
-				},
+				-- ["<Tab>"] = {
+				-- 	function(cmp)
+				-- 		return cmp.select_next()
+				-- 	end,
+				-- 	"snippet_forward",
+				-- 	"fallback",
+				-- },
+				-- ["<S-Tab>"] = {
+				-- 	function(cmp)
+				-- 		return cmp.select_prev()
+				-- 	end,
+				-- 	"snippet_backward",
+				-- 	"fallback",
+				-- },
 				["<S-k>"] = { "scroll_documentation_up", "fallback" },
 				["<Esc>"] = { "hide", "fallback" },
 				["<S-j>"] = { "scroll_documentation_down", "fallback" },
@@ -83,30 +83,19 @@ return {
 			},
 
 			sources = {
-				-- Default sources for LSP, buffer, snippets, and path.
-				-- blink.cmp often includes these by default, but
 				-- explicitly listing them ensures they are active.
 				default = {
 					"lsp", -- Language Server Protocol completions
 					"buffer", -- Words from current buffer
 					"snippets", -- Snippets from LuaSnip/friendly-snippets
 					"path", -- File system paths
-					"emoji",
 				},
 				-- Providers can be further configured here if needed, e.g.,
 				providers = {
-					emoji = {
-						module = "blink-emoji",
-						name = "Emoji",
-						score_offset = 93, -- the higher the number, the higher the priority
-						min_keyword_length = 2,
-						opts = { insert = true }, -- Insert emoji (default) or complete its name
-					},
 					lsp = {
 						name = "lsp",
 						enabled = true,
 						module = "blink.cmp.sources.lsp",
-						kind = "LSP",
 						min_keyword_length = 2,
 
 						-- When linking markdown notes, I would get snippets and text in the

@@ -58,7 +58,7 @@ local autosave_interval = 10000 -- Save every 5 seconds
 -- Create an autocmd that triggers the autosave function periodically
 vim.api.nvim_create_autocmd("CursorHold", {
 	-- * /this autocmd applies to all buffers
-	pattern = "*",
+	pattern = "*.md",
 	callback = function()
 		vim.defer_fn(autosave_markdown, autosave_interval)
 	end,

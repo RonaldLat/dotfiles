@@ -16,8 +16,11 @@ settings:
     https://bitwarden.com: access-paste
     https://gemini.google.com: access-paste
     https://github.com: access-paste
+    https://hub.docker.com: access-paste
     https://keepassxc.org: access-paste
     https://nuxt.com: access-paste
+    https://tailscale.com: access-paste
+    https://www.digitalocean.com: access-paste
     https://www.josean.com: access-paste
     https://www.opencode.net: access-paste
   content.javascript.enabled:

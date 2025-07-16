@@ -899,6 +899,11 @@ awful.rules.rules = {
 		properties = { tag = tags[1] },
 	},
 
+	{
+		rule_any = { class = { "Chromium", "chromium" } },
+		properties = { tag = tags[1] },
+	},
+
 	-- Spawn keepassxc prompts on tags were they were called (which they don't do by default)
 	{
 		rule_any = { name = { "Unlock Database - KeePassXC", "Auto-Type - KeePassXC" } },
@@ -924,8 +929,9 @@ awful.rules.rules = {
 		properties = { floating = true, placement = awful.placement.centered },
 	},
 
-	-- always put ncmpcpp on last tag
+	-- always put ncmpcpp and mpv on last tag
 	{ rule = { name = "ncmpcpp.*" }, properties = { tag = tags[#tags] } },
+	{ rule = { name = "mpv" }, properties = { tag = tags[#tags] } },
 
 	-- display keyboard (and mouse) status nicely
 	{
@@ -1210,5 +1216,8 @@ end)
 -- Autostart xautolock for screen locking
 -- awful.spawn("~/.config/awesome/autostart.sh")
 -- awful.spawn.with_shell("feh &")
-awful.spawn("/home/ronaldo/dotfiles/.fehbg")
+awful.spawn("/home/ronald/dotfiles/.fehbg")
+awful.spawn(
+	"xrandr --output eDP-1 --mode 1920x1080 --rate 60 --primary --output HDMI-2 --mode 3840x2160 --rate 30 --right-of eDP-1 dotfiles"
+)
 awful.spawn.with_shell("picom &")
