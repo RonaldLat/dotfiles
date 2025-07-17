@@ -73,7 +73,8 @@ beautiful.init(gears.filesystem.get_dir("config") .. "/themes/gruvbox/theme.lua"
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "xresources/theme.lua")
 
 -- This is used later as the default terminal, browser and editor to run.
-local terminal = os.getenv("TERMCMD") or "alacritty"
+-- local terminal = os.getenv("TERMCMD") or "alacritty"
+local terminal = "kitty" or os.getenv("TERMCMD")
 -- local browser = os.getenv("BROWSER") or "qutebrowser"
 local browser = "qutebrowser" or os.getenv("BROWSER")
 local editor = os.getenv("EDITOR") or "nvim"
@@ -903,6 +904,14 @@ awful.rules.rules = {
 		rule_any = { class = { "Chromium", "chromium" } },
 		properties = { tag = tags[1] },
 	},
+	{
+		rule_any = { class = { "org.gnome.Nautilus" } },
+		properties = { tag = tags[3] },
+	},
+	{
+		rule_any = { class = { terminal, "Alacritty" } },
+		properties = { tag = tags[2] },
+	},
 
 	-- Spawn keepassxc prompts on tags were they were called (which they don't do by default)
 	{
@@ -925,7 +934,10 @@ awful.rules.rules = {
 
 	-- some applications like password prompt for keepassxc autotype should be floating and centered
 	{
-		rule_any = { name = { "Unlock Database - KeePassXC", "Auto-Type - KeePassXC" }, class = { "Git-gui--askpass" } },
+		rule_any = {
+			name = { "Unlock Database - KeePassXC", "Auto-Type - KeePassXC" },
+			class = { "Git-gui--askpass" },
+		},
 		properties = { floating = true, placement = awful.placement.centered },
 	},
 
