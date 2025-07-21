@@ -900,18 +900,18 @@ awful.rules.rules = {
 		properties = { tag = tags[1] },
 	},
 
-	{
-		rule_any = { class = { "Chromium", "chromium" } },
-		properties = { tag = tags[1] },
-	},
-	{
-		rule_any = { class = { "org.gnome.Nautilus" } },
-		properties = { tag = tags[3] },
-	},
-	{
-		rule_any = { class = { terminal, "Alacritty" } },
-		properties = { tag = tags[2] },
-	},
+	-- {
+	-- 	rule_any = { class = { "Chromium", "chromium" } },
+	-- 	properties = { tag = tags[1] },
+	-- },
+	-- {
+	-- 	rule_any = { class = { "org.gnome.Nautilus" } },
+	-- 	properties = { tag = tags[3] },
+	-- },
+	-- {
+	-- 	rule_any = { class = { terminal, "Alacritty" } },
+	-- 	properties = { tag = tags[2] },
+	-- },
 
 	-- Spawn keepassxc prompts on tags were they were called (which they don't do by default)
 	{
@@ -1233,3 +1233,4 @@ awful.spawn(
 	"xrandr --output eDP-1 --mode 1920x1080 --rate 60 --primary --output HDMI-2 --mode 3840x2160 --rate 30 --right-of eDP-1 dotfiles"
 )
 awful.spawn.with_shell("picom &")
+awful.util.spawn("conky")

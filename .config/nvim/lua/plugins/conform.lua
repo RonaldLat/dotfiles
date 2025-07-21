@@ -21,7 +21,7 @@ return {
 				scss = { "prettierd", "prettier", stop_after_first = true },
 				toml = { "taplo", "prettier", stop_after_first = true },
 				yaml = { "prettierd", "prettier", stop_after_first = true },
-				xml = { "prettierd", "prettier", stop_after_first = true },
+				xml = { "xmlformatter", "prettier", stop_after_first = true },
 				json = { "prettierd", "prettier", stop_after_first = true },
 				jsonc = { "prettierd", "prettier", stop_after_first = true },
 				["_"] = { "trim_whitespace", "trim_newlines" },
