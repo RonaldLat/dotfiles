@@ -26,7 +26,7 @@ odools.setup({
 })
 
 -- vim.cmd("colorscheme pywal16")
-vim.cmd("colorscheme ayu-mirage")
+vim.cmd("colorscheme nordfox")
 vim.cmd("silent! RenderMarkdown")
 -- vim.cmd("colorscheme monokai-pro")
 -- vim.lsp.enable({
