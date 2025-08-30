@@ -24,6 +24,8 @@ alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcd="docker compose down "
 alias dcr="docker compose restart "
+alias dcl="docker compose logs "
+alias vv="nvim"
 #alias docker="sudo docker"
 
 export NVM_DIR="$HOME/.nvm"
