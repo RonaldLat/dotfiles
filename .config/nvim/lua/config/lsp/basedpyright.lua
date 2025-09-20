@@ -1,4 +1,4 @@
-local util = require("lspconfig.util")
+local util = vim.lsp.enable("lspconfig.util")
 
 local root_files = {
 	"pyproject.toml",

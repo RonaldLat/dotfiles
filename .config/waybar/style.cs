@@ -1,5 +1,4 @@
-/* @import "themes/gruvbox.css"; */
-@import "themes/folke.css";
+@import "themes/tokyonight.css";
 /* Change this import to switch themes */
 
 * {
@@ -32,21 +31,17 @@ window#waybar {
   margin: 3px;
   margin-top: 2;
   margin-bottom: 2;
-  /* border-radius: 16px; */
-  /* background: @background-alt; */
-}
-
-
-#custom-updates {
-  color: crimson;
+  border-radius: 6px;
+  background: @background-alt;
 }
 
 /* === Workspaces === */
 #workspaces {
   padding: 2;
   margin: 0;
+  margin-top: 2;
   margin-right: 5px;
-  /* border: 2px solid @foreground-alt; */
+  border: 2px solid @foreground-alt;
 }
 
 #workspaces button,
@@ -62,7 +57,7 @@ window#waybar {
 #workspaces button.visible {
   background: @foreground;
   color: @background;
-  /* border-radius: 14px; */
+  border-radius: 4px;
   margin: 0 2px;
 }
 
@@ -74,121 +69,113 @@ window#waybar {
 
 #workspaces button.urgent {
   background: @critical;
-  /* border-radius: 14px; */
+  border-radius: 4px;
 }
 
 /* === Module Specific Colors === */
 #bluetooth,
-#scratchpad {
-  color: @foreground;
-  /* border: 2px solid @scratchpad; */
-}
-
+#scratchpad,
 #window {
-  background: @background-alt;
   color: @foreground;
-}
-
-#bluetooth {
-  /* font-size: 18px; */
+  border: 2px solid @foreground-alt;
 }
 
 #disk {
   color: @foreground;
-  /* border: 2px solid @disk; */
+  border: 2px solid @foreground-alt;
 }
 
 #cpu {
   color: @foreground;
-  /* border: 2px solid @cpu; */
+  border: 2px solid @foreground-alt;
 }
 
 #memory {
   color: @foreground;
-  /* border: 2px solid @memory; */
+  border: 2px solid @foreground-alt;
 }
 
 #temperature {
   color: @foreground;
-  /* border: 2px solid @temperature; */
+  border: 2px solid @foreground-alt;
 }
 
 #network {
   color: @foreground;
-  /* border: 2px solid @network; */
+  border: 2px solid @foreground-alt;
 }
 
 #pulseaudio {
   color: @foreground;
-  /* border: 2px solid @pulseaudio; */
+  border: 2px solid @foreground-alt;
 }
 
 #backlight {
   color: @foreground;
-  /* border: 2px solid @backlight; */
+  border: 2px solid @foreground-alt;
 }
 
 #battery {
   color: @foreground;
-  /* border: 2px solid @battery; */
+  border: 2px solid @foreground-alt;
 }
 
 #clock {
   color: @foreground;
-  /* border: 2px solid @clock; */
+  border: 2px solid @foreground-alt;
 }
 
 /* === Conditional Styling === */
 #network.connected {
   color: @good;
-  /* border: 2px solid @good; */
+  border: 2px solid @good;
 }
 
 #network.disconnected {
   color: @critical;
-  /* border: 2px solid @critical; */
+  border: 2px solid @critical;
 }
 
 #temperature.critical {
   color: @critical;
-  /* border: 2px solid @critical; */
+  border: 2px solid @critical;
 }
 
 #pulseaudio.muted {
   color: @critical;
-  /* border: 2px solid @critical; */
+  border: 2px solid @critical;
 }
 
 #battery.charging {
   color: @good;
-  /* border: 2px solid @good; */
+  border: 2px solid @good;
 }
 
 #battery.warning {
   color: @warning;
-  /* border: 2px solid @warning; */
+  border: 2px solid @warning;
 }
 
 /* === Battery Critical Animation === */
 @keyframes blink-critical {
   0% {
-    /* border-color: @critical; */
+    border-color: @critical;
     color: @critical;
   }
 
   50% {
-    /* border-color: transparent; */
+    border-color: transparent;
     color: @background;
   }
 
   100% {
-    /* border-color: @critical; */
+    border-color: @critical;
     color: @critical;
   }
 }
 
 #battery.critical {
   animation: blink-critical 1s infinite;
-  /* border: 2px solid @critical; */
+  border: 2px solid @critical;
   color: @critical;
 }

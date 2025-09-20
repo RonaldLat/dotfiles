@@ -1,0 +1,214 @@
+/* Gruvbox Dark Hard */
+/* @define-color background #1d2021; */
+/* @define-color foreground #ebdbb2; */
+/* @define-color cursor     #ebdbb2; */
+/**/
+/* @define-color color0     #282828; */
+/* @define-color color1     #cc241d; */
+/* @define-color color2     #98971a; */
+/* @define-color color3     #d79921; */
+/* @define-color color4     #458588; */
+/* @define-color color5     #b16286; */
+/* @define-color color6     #689d6a; */
+/* @define-color color7     #a89984; */
+/* @define-color color8     #928374; */
+/* @define-color color9     #fb4934; */
+/* @define-color color10    #b8bb26; */
+/* @define-color color11    #fabd2f; */
+/* @define-color color12    #83a598; */
+/* @define-color color13    #d3869b; */
+/* @define-color color14    #8ec07c; */
+/* @define-color color15    #ebdbb2; */
+
+/*
+ * Color Palette: Nord
+ */
+@define-color background #2e3440;
+@define-color foreground #d8dee9;
+
+@define-color color0     #3b4252; /* dark blue */
+@define-color color1     #bf616a; /* red */
+@define-color color2     #a3be8c; /* green */
+@define-color color3     #ebcb8b; /* yellow */
+@define-color color4     #81a1c1; /* blue */
+@define-color color5     #b48ead; /* purple */
+@define-color color6     #8fbcbb; /* cyan */
+@define-color color7     #e5e9f0; /* light gray */
+@define-color color8     #4c566a; /* medium gray */
+@define-color color9     #bf616a; /* bright red */
+@define-color color10    #a3be8c; /* bright green */
+@define-color color11    #ebcb8b; /* bright yellow */
+@define-color color12    #81a1c1; /* bright blue */
+@define-color color13    #b48ead; /* bright purple */
+@define-color color14    #88c0d0; /* bright cyan */
+@define-color color15    #eceff4; /* bright gray */
+
+/* Now define the semantic colors using the base colors */
+@define-color text    @foreground;
+@define-color good    @color6;
+@define-color warn    @color3;
+@define-color crit    @color1;
+@define-color accent  @color6;
+@define-color hilight @color6;
+
+
+* {
+	font-size: 14px;
+	font-family: "Source Code Pro Medium", "Font Awesome 5 Free";
+	font-weight: bold;
+}
+
+window#waybar {
+	color: @text;
+	text-shadow: 1px 1px 1px black;
+	background: @background;
+	border-radius: 4px;
+}
+
+window#waybar.top {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+window#waybar.bottom {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* Base styling for modules */
+#workspaces,
+#mode,
+#idle_inhibitor,
+#pulseaudio,
+#memory,
+#cpu,
+#clock,
+#battery,
+#backlight,
+#disk,
+#taskbar,
+#custom-weather,
+#custom-updates,
+#custom-auroch,
+#custom-swap,
+#custom-separator,
+#custom-powermenu,
+#custom-covid,
+#custom-gputemp,
+#custom-gpuuse,
+#custom-cputemp,
+#tray {
+	padding: 2px 10px 0px 10px;
+}
+
+#custom-separator {
+	color: @color8;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#workspaces {
+	padding: 0px;
+}
+#workspaces button {
+	color: @text;
+	margin: 0;
+	padding: 3px 15px 0px 15px;
+	border-radius: 0px;
+}
+#workspaces button.focused {
+	color: @hilight;
+}
+
+#mode {
+	color: @warn;
+}
+
+#custom-auroch {
+	padding-left: 5px;
+}
+
+#battery.good,
+#custom-covid.DOWN,
+#cpu.good,
+#custom-updates.no-updates,
+#custom-auroch.no-updates,
+#custom-cputemp.normal,
+#custom-gputemp.normal,
+#custom-gpuuse.normal,
+#disk.1.good,
+#disk.2.good,
+#memory.good {
+	color: @good;
+}
+
+#battery.warning,
+#custom-covid.UP,
+#cpu.warning,
+#custom-updates.checking,
+#custom-auroch.checking,
+#custom-gputemp.warning,
+#custom-gpuuse.warning,
+#custom-cputemp.warning,
+#disk.1.warning,
+#disk.2.warning,
+#memory.warning {
+	background: @background;
+	color: @warn;
+}
+
+#battery.critical,
+#cpu.critical,
+#custom-auroch.error,
+#custom-updates.error,
+#custom-gputemp.critical,
+#custom-gpuuse.critical,
+#custom-cputemp.critical,
+#disk.1.critical,
+#disk.2.critical,
+#memory.critical {
+	background: @background;
+	color: @crit;
+}
+
+/*
+#custom-auroch.no-updates,
+#custom-covid.DOWN,
+#custom-updates.no-updates {
+	color: @text;
+}
+*/
+#custom-updates.updates,
+#custom-auroch.updates {
+	color: @hilight;
+}
+
+#custom-powermenu {
+	color: @crit;
+	padding-top: 1px;
+	margin-right: 3px;
+}
+#clock {
+	margin-left: 3px;
+}
+
+#taskbar {
+	padding-left: 0;
+}
+#taskbar button {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+#taskbar button.active {
+	color: @accent;
+}
+
+/* Pad the tray so the bottom bar doesn't change size when no windows are open */
+#tray {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}

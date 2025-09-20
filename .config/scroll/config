@@ -1,7 +1,20 @@
 # vim: ft=swayconfig
 #
 exec swaybg -i ~/Pictures/wallpapers/City-Rain.png -m fill
-exec_always pkill waybar && waybar &
+# exec_always pkill waybar || true; sleep 5; waybar &
+exec_always sh -c "pkill waybar || true; sleep 1; waybar &"
+
+exec dunst &
+exec /usr/lib/xdg-desktop-portal &
+exec /usr/lib/xdg-desktop-portal-wlr &
+exec /usr/lib/xdg-desktop-portal-gtk &
+
+# exec_always pkill waybar && waybar &
+
+
+# Floating configuration for dialog windows
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 800 600, move position center
+
 # Default config for scroll
 #
 # Copy this to ~/.config/scroll/config and edit it to your liking.
@@ -24,8 +37,13 @@ bindsym $mod+l focus right
 bindsym $mod+h focus left
 # Your preferred terminal emulator
 set $term kitty
+set $browser chromium
+set $filemanager nautilus
 # Your preferred application launcher
-set $menu wmenu-run
+# set $menu wmenu-run
+set $menu rofi -show drun
+
+
 
 ### Output configuration
 #
@@ -65,14 +83,16 @@ set $menu wmenu-run
   input type:keyboard {
       xkb_layout "eu"
   }
+
+
 #
 # You can also configure each device individually.
 # Read `man 5 scroll-input` for more information about this section.
 
 ### Windows defaults
 default_border pixel 2
-gaps inner 4
-gaps outer 20
+gaps inner 5
+gaps outer 10
 client.focused #15439e #000000 #e0e0e0 #2e9ef4 #15439e
 client.focused_inactive #595959 #000000 #e0e0e0 #2e9ef4 #595959
 client.unfocused #595959 #000000 #e0e0e0 #2e9ef4 #595959
@@ -103,6 +123,8 @@ animations {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+w exec $browser
+
 
     # Kill focused window
     bindsym $mod+Backspace kill
@@ -110,7 +132,7 @@ animations {
     bindsym $mod+Ctrl+Backspace kill all
 
     # vim friendly way of killing a window
-    bindsym $mod+x kill
+    bindsym $mod+q kill
     # bindsym $mod+Shift+x kill all
 
     # Start your launcher
@@ -149,13 +171,23 @@ animations {
     bindsym $mod+Ctrl+$down move down
     bindsym $mod+Ctrl+$up move up
     bindsym $mod+Ctrl+$right move right
-    bindsym $mod+Ctrl+home move beginning
+
+    # vim
+    bindsym $mod+Ctrl+h move left
+    bindsym $mod+Ctrl+j move down
+    bindsym $mod+Ctrl+k move up
+    bindsym $mod+Ctrl+l move right
+
     bindsym $mod+Ctrl+end move end
     # nomode
     bindsym $mod+Alt+$left move left nomode
+    bindsym $mod+Alt+h move left nomode
     bindsym $mod+Alt+$down move down nomode
+    bindsym $mod+Alt+j move down nomode
     bindsym $mod+Alt+$up move up nomode
+    bindsym $mod+Alt+k move up nomode
     bindsym $mod+Alt+$right move right nomode
+    bindsym $mod+Alt+l move right nomode
     bindsym $mod+Alt+home move beginning nomode
     bindsym $mod+Alt+end move end nomode
 
@@ -196,7 +228,9 @@ animations {
     bindsym $mod+Ctrl+2 move workspace to output right
 
     bindsym $mod+Shift+Page_Up workspace prev
+    bindsym $mod+Shift+p workspace prev
     bindsym $mod+Shift+Page_Down workspace next
+    bindsym $mod+Shift+n workspace next
     bindsym $mod+Page_Up workspace prev_on_output
     bindsym $mod+Page_Down workspace next_on_output
 
@@ -233,10 +267,10 @@ animations {
 # Layout stuff:
 #
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-    bindsym $mod+Ctrl+f fullscreen global
-    bindsym $mod+Alt+f fullscreen_application toggle
-    bindsym $mod+Ctrl+Alt+f fullscreen_application reset
+    bindsym $mod+m fullscreen
+    bindsym $mod+Ctrl+m fullscreen global
+    bindsym $mod+Alt+m fullscreen_application toggle
+    bindsym $mod+Ctrl+Alt+m fullscreen_application reset
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+y focus mode_toggle
@@ -244,7 +278,8 @@ animations {
     bindsym $mod+Shift+y layout_transpose
 
     # Float a window
-    bindsym $mod+Shift+f floating toggle
+    # bindsym $mod+Shift+f floating toggle
+    bindsym $mod+space floating toggle
 
     # Toggle sticky
     bindsym $mod+Shift+Ctrl+a sticky toggle
@@ -446,7 +481,7 @@ mode "fit_size" {
     bindsym Ctrl+Shift+$down fit_size v all equal; mode default
     bindsym Escape mode "default"
 }
-bindsym $mod+w mode "fit_size"
+# bindsym $mod+w mode "fit_size"
 
 mode "trailmark" {
     bindsym bracketright trailmark next
@@ -534,7 +569,10 @@ bindsym $mod+g mode "spaces"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
+    # bindsym Print exec grim ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png
+    bindsym Print exec grim ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png && notify-send "Screenshot Taken" "Full screen screenshot saved"
+
 
 
 focus_wrapping no

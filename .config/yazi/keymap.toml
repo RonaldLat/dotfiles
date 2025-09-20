@@ -18,10 +18,17 @@ prepend_keymap = [
     "g",
     "c",
   ], run = "cd ~/dotfiles", desc = "Go ~/Config" },
+
   { on = [
     "g",
     "y",
   ], run = "cd ~/YouTube/", desc = "Go ~/YouTube" },
+
+  { on = [
+    "g",
+    "i",
+  ], run = "cd ~/Incoming/", desc = "Go ~/YouTube" },
+
   { on = [
     "M",
   ], run = "plugin mount", desc = "mount plugin" },

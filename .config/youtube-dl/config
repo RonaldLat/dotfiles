@@ -4,17 +4,20 @@
 # Output template to create a folder for each playlist
 -o "~/YouTube/%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s"
 
-# Always download the best quality available (best video and best audio streams merged)
+# Use the highest quality video/audio streams and merge them
 -f "bestvideo+bestaudio/best"
+
+# Set a custom user-agent to avoid being blocked
+--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 
 # Continue on download errors and resume if possible
 --ignore-errors
 --continue
 
+# Use cookies for authentication
+--cookies "~/youtube_cookies.txt"
 
---cookies "~/www.youtube.com_cookies.txt"
-
-# Keep a record of downloaded videos to prevent re-downloading
+# Keep a record of downloaded videos
 --download-archive "downloaded_videos.txt"
 
 # Embed metadata into the downloaded file
