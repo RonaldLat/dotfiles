@@ -68,3 +68,9 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/ron/.dart-cli-completion/zsh-config.zsh ]] && . /home/ron/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
