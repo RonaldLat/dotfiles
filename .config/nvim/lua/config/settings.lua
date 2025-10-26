@@ -3,7 +3,8 @@
 local M = {}
 
 -- --- Obsidian Vault Settings ---
-M.OBSIDIAN_VAULT_PATH = vim.fn.expand("~/Obsidian/lat96") -- <-- SET YOUR ACTUAL VAULT PATH!
+-- M.OBSIDIAN_VAULT_PATH = vim.fn.expand("~/Obsidian/lat96") -- <-- SET YOUR ACTUAL VAULT PATH!
+M.OBSIDIAN_VAULT_PATH = vim.fn.expand("~/Obsidian") -- <-- SET YOUR ACTUAL VAULT PATH!
 M.MASTER_TASK_FILENAME = "Tasks.md" -- <-- SET YOUR MASTER TASK FILE NAME!
 
 -- --- Default Task Settings ---

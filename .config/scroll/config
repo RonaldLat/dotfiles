@@ -48,7 +48,7 @@ set $menu fuzzel
 
 ### Idle configuration
 exec swayidle -w \
-          timeout 240 '$HOME/.config/scroll/scripts/lock.sh' \
+          timeout 1240 '$HOME/.config/scroll/scripts/lock.sh' \
           before-sleep '$HOME/.config/scroll/scripts/lock.sh'
 
 

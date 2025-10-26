@@ -22,15 +22,37 @@ end
 -- npm install -g svelte-language-server
 -- ```
 return {
-	cmd = { "svelteserver", "--stdio" },
-	filetypes = { "svelte" },
-	root_markers = { "package.json", ".git" },
-	-- on_attach = function()
-	--   vim.api.nvim_buf_create_user_command(
-	--     0,
-	--     'MigrateToSvelte5',
-	--     migrate_to_svelte_5,
-	--     { desc = 'Migrate Component to Svelte 5 Syntax' }
-	--   )
-	-- end,
+  cmd = { "svelteserver", "--stdio" },
+  filetypes = { "svelte" },
+  root_markers = { "package.json", ".git" },
+
+  settings = {
+    svelte = {
+      plugin = {
+        typescript = {
+          config = {
+            exclude = {
+              "node_modules",
+              "build",
+              "dist",
+              ".svelte-kit",
+              ".vercel",
+              ".netlify",
+              "coverage"
+            },
+          },
+        },
+      },
+    },
+  },
+
+  -- Optional command for migrating to Svelte 5
+  -- on_attach = function()
+  --   vim.api.nvim_buf_create_user_command(
+  --     0,
+  --     "MigrateToSvelte5",
+  --     migrate_to_svelte_5,
+  --     { desc = "Migrate Component to Svelte 5 Syntax" }
+  --   )
+  -- end,
 }
