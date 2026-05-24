@@ -9,6 +9,7 @@ lsp.enable({
 	"clangd",
 	"lua_ls",
 	"ruff",
+  "tailwindcss",
 	-- "marksman",
 	-- "ts_ls",
 	-- "jsonls",

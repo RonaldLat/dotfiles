@@ -7,8 +7,7 @@ swayidle -w \
 
 
 # Lock screen immediately
-swaylock --image ~/Downloads/muerte.png
-
+swaylock --image /home/ron/Pictures/wallpapers/gruvbox-city.png
 
 # Kill the last instance of swayidle so the timer doesn't keep running in background
 pkill --newest swayidle

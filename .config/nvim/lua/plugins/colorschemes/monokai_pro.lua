@@ -2,7 +2,7 @@ return {
 	{
 		"loctvl842/monokai-pro.nvim",
 		-- lazy = false,
-		-- event = { "VeryLazy" },
+		event = { "VeryLazy" },
 		priority = 1000,
 		config = function()
 			require("monokai-pro").setup({

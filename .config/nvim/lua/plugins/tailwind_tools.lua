@@ -1,13 +1,24 @@
--- tailwind-tools.lua
 return {
-	"luckasRanarison/tailwind-tools.nvim",
-	name = "tailwind-tools",
-	build = ":UpdateRemotePlugins",
-	event = { "VeryLazy" },
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-		"nvim-telescope/telescope.nvim", -- optional
-		"neovim/nvim-lspconfig", -- optional
-	},
-	opts = {}, -- your configuration
+  "luckasRanarison/tailwind-tools.nvim",
+  ft = {
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "svelte",
+    "vue",
+    "tsx"
+  },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope.nvim",
+  },
+  opts = {
+    server = {
+      override = false,
+    },
+  },
 }

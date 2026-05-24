@@ -26,7 +26,27 @@ alias dcd="docker compose down "
 alias dcr="docker compose restart "
 alias dcl="docker compose logs "
 alias vv="nvim"
-#alias docker="sudo docker"
+alias rec='wf-recorder -g "$(slurp)" -f ~/Videos/Recordings/rec_$(date +%Y%m%d_%H%M%S).mp4'
+# SSHFS Mount Aliases
+alias mountbook="sshfs ronald@100.81.96.50:/home/ronald/1TB/Library/Audiobooks ~/Remote-Library/audiobooks -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
+alias unmountbook="fusermount -u ~/Remote-Library/audiobooks"
+# SSHFS Master 1TB HDD Mount
+alias mount1tb="sshfs ronald@100.81.96.50:/home/ronald/1TB ~/Remote-Library/1TB-HDD -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
+alias unmount1tb="fusermount -u ~/Remote-Library/1TB-HDD"
+
+# RSYNC SSHFS File Operations (Laptop <-> HDD)
+# 1. Safe Move: Copies to HDD, verifies, then deletes from laptop
+alias hdd-mv="rsync -rhP --remove-source-files"
+
+# 2. Safe Copy: Copies to HDD, keeps local copy on laptop
+alias hdd-cp="rsync -rhP"
+
+# 3. Two-Way Sync: Keeps laptop folder and HDD folder perfectly identical
+# (Warning: --delete removes files from destination if they were deleted on source)
+alias hdd-sync="rsync -rhP --delete"
+
+# 4. Pull: Easily grab a massive folder/file from HDD to Laptop Downloads
+alias hdd-pull="rsync -rhP"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

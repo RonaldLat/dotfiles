@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ~/Downloads/Obsidian-1.9.14.AppImage

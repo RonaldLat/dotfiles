@@ -2,6 +2,7 @@ return {
 	"Saghen/blink.cmp",
 	event = "InsertEnter",
 	build = "cargo build --release",
+  version = "*",
 	dependencies = {
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets", -- Recommended for common snippets
