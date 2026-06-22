@@ -26,10 +26,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 "$HOME/.tmux/plugins/tpm/bin/install_plugins" 2>/dev/null || true
 
-echo "==> Installing Nerd Fonts..."
-if [ -f "$DOTFILES/scripts/nf_installer.sh" ]; then
-  bash "$DOTFILES/scripts/nf_installer.sh"
-fi
 
 echo "==> Setting zsh as default shell..."
 if command -v zsh &>/dev/null && [ "$SHELL" != "/usr/bin/zsh" ]; then
