@@ -1,26 +1,6 @@
 [mgr]
 show_hidden = true
 
-[opener]
-app_image = [
-  { run = '"$1"', orphan = true, desc = "Run AppImage", for = "unix" },
-]
-# pdff = [{ run = 'zathura "$@"', desc = "zathura", block = true, for = "unix" }]
-pdff = [{ run = 'sioyek "$@"', desc = "sioyek", block = true, for = "unix" }]
-
-
-[open]
-prepend_rules = [
-  { name = "*.AppImage", use = [
-    "app_image",
-  ] },
-  { mime = "application/pdf", use = [
-    "pdff",
-    "reveal",
-  ] },
-]
-
-
 [[plugin.prepend_fetchers]]
 id = "git"
 name = "*"
@@ -30,12 +10,6 @@ run = "git"
 id = "git"
 name = "*/"
 run = "git"
-
-
-[manager]
-visibility_rules = [
-    { pattern = "^/home/ron/Projects/videolab/.*\\.meta$", visible = false },
-]
 
 # [plugin]
 # prepend_preloaders = [
