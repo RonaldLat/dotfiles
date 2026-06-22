@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 echo "==> Linking dotfiles..."
 
@@ -25,7 +25,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
 "$HOME/.tmux/plugins/tpm/bin/install_plugins" 2>/dev/null || true
-
 
 echo "==> Setting zsh as default shell..."
 if command -v zsh &>/dev/null && [ "$SHELL" != "/usr/bin/zsh" ]; then
