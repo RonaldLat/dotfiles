@@ -26,6 +26,13 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 "$HOME/.tmux/plugins/tpm/bin/install_plugins" 2>/dev/null || true
 
+echo "==> Installing Zap zsh plugin manager..."
+ZAP_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zap"
+if [ ! -f "$ZAP_DIR/zap.zsh" ]; then
+  mkdir -p "$ZAP_DIR"
+  git clone --depth 1 https://github.com/zap-zsh/zap.git "$ZAP_DIR"
+fi
+
 echo "==> Setting zsh as default shell..."
 if command -v zsh &>/dev/null && [ "$SHELL" != "/usr/bin/zsh" ]; then
   sudo chsh -s /usr/bin/zsh "$(whoami)" 2>/dev/null || true
